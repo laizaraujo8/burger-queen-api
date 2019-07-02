@@ -1,0 +1,26 @@
+{
+  "name": "burger-queen-api",
+  "version": "1.0.0",
+  "description": "## Índice",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^5.8.12",
+    "sqlite3": "^4.0.9",
+    "sequelize-cli": "^5.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laizaraujo8/burger-queen-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laizaraujo8/burger-queen-api/issues"
+  },
+  "homepage": "https://github.com/laizaraujo8/burger-queen-api#readme"
+}
