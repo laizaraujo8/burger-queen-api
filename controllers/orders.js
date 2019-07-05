@@ -1,40 +1,40 @@
 const router = require('express').Router();
 const models = require('../models');
-const User = models.User;
+const Order = models.Order;
 
 router.get("/", (req, res) => {
-    User.findAll()
+    Order.findAll()
     .then(users => {
-        const userList = users.map(user => user.dataValues)
+        const userList = users.map(user => Order.dataValues)
         res.send(userList)
     });
 });
 
-router.get("/:id", (req, resp) => { User.findOne({where: {id:req.params.id}})
-    User.findByPk(req.params.id)
+router.get("/:id", (req, resp) => { Order.findOne({where: {id:req.params.id}})
+    Order.findByPk(req.params.id)
     .then( user => {
         resp.send(user)
     })
 });
 
 router.post("/", (req, res) => {
-    Users.create(req.body)
+    Order.create(req.body)
     .then(user => {
         res.status(201).send(user)
     });
 });
 
 router.put("/:id", (req, res) => {
-    Users.update({... req.params.body}, {where: {id: req.params.id}})
+    Order.update({... req.params.body}, {where: {id: req.params.id}})
     .then(() => {
-        Users
+        Order
         .findByPk(req.params.id)
         .then(user => res.send(user.dataValues))
     });
 });
 
 router.delete("/:id", (req, res) => {
-    Users.destroy({where: {id: req.params.id}})
+    Order.destroy({where: {id: req.params.id}})
     .then(() => res.sendStatus(200));
 });
 
